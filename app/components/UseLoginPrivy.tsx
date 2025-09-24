@@ -196,7 +196,7 @@ export default function UseLoginPrivy() {
                       ) : balanceError ? (
                         <span className="text-red-600 dark:text-red-400">Error loading balance</span>
                       ) : (
-                        `${parseFloat(balance || "0").toFixed(4)} MON`
+                        `${parseFloat(balance || "0").toFixed(4)} MONN`
                       )}
                     </span>
                   </div>
