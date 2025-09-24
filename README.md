@@ -12,7 +12,7 @@ A modern, full-stack Progressive Web Application built with Next.js 14, featurin
 - **📱 Mobile-First**: Optimized for mobile devices with install prompts
 - **⚡ Modern Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
 
-## 🛠 Tech Stack
+## 🛠 Tech Stac
 
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS
@@ -465,5 +465,6 @@ If you encounter any issues or have questions:
 3. Check the [Next.js 14](https://nextjs.org/) documentation
 4. Check the [0x Protocol](https://0x.org/) documentation
 5. Check the [Serwist](https://serwist.pages.dev/) documentation
-#   d i c e s w a p  
+#   d i c e s w a p 
+ 
  
