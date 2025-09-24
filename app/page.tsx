@@ -4,6 +4,7 @@ import SendNotification from "./components/SendNotification";
 import { InstallPWA } from "./components/InstallPWA";
 import UseLoginPrivy from "./components/UseLoginPrivy";
 import SwapComponent from "./components/SwapComponent";
+import DiceSwap from "./components/DiceSwap";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -22,8 +23,8 @@ export default function Page() {
             </h1>
           </div>
         </div>
-        <SwapComponent />
-
+        {/* <SwapComponent /> */}
+<DiceSwap/>
         <div className="space-y-8">
           {/* <SendNotification /> */}
           <UseLoginPrivy />
