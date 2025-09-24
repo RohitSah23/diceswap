@@ -141,69 +141,7 @@ export default function UseLoginPrivy() {
             </button>
           </div>
 
-          {/* Wallet Information Section */}
-          {hasEthereumWallet && (
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 border border-slate-200 dark:border-slate-700">
-              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center">
-                <span className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mr-3">
-                  💳
-                </span>
-                Embedded Wallet
-              </h3>
-              
-              <div className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-slate-600 dark:text-slate-300 mb-2">Address</label>
-                  <div className="bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4 flex items-center justify-between gap-3">
-                    <span className="font-mono text-sm text-slate-800 dark:text-slate-200 break-all">
-                      {walletAddress}
-                    </span>
-                    <button
-                      onClick={copyToClipboard}
-                      className="flex-shrink-0 p-2 rounded-md bg-slate-200 dark:bg-slate-600 hover:bg-slate-300 dark:hover:bg-slate-500 text-slate-700 dark:text-slate-300 transition-colors duration-200"
-                      title={copied ? "Copied!" : "Copy address"}
-                    >
-                      {copied ? "✓" : "📋"}
-                    </button>
-                  </div>
-                  
-                  {/* QR Code Section */}
-                 
-                </div>
-                
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <label className="block text-sm font-medium text-slate-600 dark:text-slate-300">Balance</label>
-                    <button
-                      onClick={fetchBalance}
-                      disabled={balanceLoading}
-                      title="Refresh balance"
-                      className={`p-2 rounded-lg transition-colors duration-200 ${
-                        balanceLoading 
-                          ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed' 
-                          : 'bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300'
-                      }`}
-                    >
-                      <span className={balanceLoading ? 'animate-spin' : ''}>
-                        {balanceLoading ? "⟳" : "↻"}
-                      </span>
-                    </button>
-                  </div>
-                  <div className="bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4">
-                    <span className="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                      {balanceLoading ? (
-                        <span className="text-slate-500 dark:text-slate-400">Loading...</span>
-                      ) : balanceError ? (
-                        <span className="text-red-600 dark:text-red-400">Error loading balance</span>
-                      ) : (
-                        `${parseFloat(balance || "0").toFixed(4)} MONN`
-                      )}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+         
 
          
         </div>
