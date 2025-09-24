@@ -110,47 +110,52 @@ export default function Header() {
             <span>Loading...</span>
           ) : (
             <>
-              <button
+                   <button
                 onClick={() => login()}
                 disabled={!!user}
                 className={`px-4 py-2 rounded-lg font-semibold shadow-md transition ${
                   user
-                    ? 'bg-gray-400 cursor-not-allowed text-white'
+                    ? 'bg-gray-400 cursor-not-allowed hidden text-white'
                     : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
               >
-                {user ? 'Logged In' : 'Login'}
+                {user ? 'Logged In' : 'Connect'}
               </button>
-              <button
-                onClick={logout}
-                disabled={!user}
-                className={`px-4 py-2 rounded-lg font-semibold shadow-md transition ${
-                  !user
-                    ? 'bg-gray-400 cursor-not-allowed text-white'
-                    : 'bg-red-600 hover:bg-red-700 text-white'
-                }`}
-              >
-                {!user ? 'Logged Out' : 'Logout'}
-              </button>
-              <button
-                onClick={handleCreateWallet}
-                disabled={!user || isCreating || hasEthereumWallet}
-                className={`px-4 py-2 rounded-lg font-semibold shadow-md transition ${
-                  hasEthereumWallet
-                    ? 'bg-green-600 text-white cursor-default'
-                    : !user || isCreating
-                    ? 'bg-gray-400 text-white cursor-not-allowed'
-                    : 'bg-purple-600 hover:bg-purple-700 text-white'
-                }`}
-              >
-                {hasEthereumWallet
-                  ? '✓ Wallet Exists'
-                  : !user
-                  ? 'Login to Create'
-                  : isCreating
-                  ? 'Creating...'
-                  : 'Create Wallet'}
-              </button>
+
+
+{/* Logout Button */}
+{/* Only show Logout Button if user is logged in */}
+{user && (
+  <button
+    onClick={logout}
+    className="px-4 py-2 rounded-2xl font-semibold shadow-lg transition backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 text-red-400"
+  >
+    Logout
+  </button>
+)}
+
+
+{/* Create Wallet Button */}
+<button
+  onClick={handleCreateWallet}
+  disabled={!user || isCreating || hasEthereumWallet}
+  className={`px-4 py-2 rounded-2xl font-semibold shadow-lg transition backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 ${
+    hasEthereumWallet
+      ? 'text-green-400'
+      : !user || isCreating
+      ? 'text-gray-400 hidden'
+      : 'text-blue-400 hidden'
+  }`}
+>
+  {hasEthereumWallet
+    ? '✓ Wallet Exists'
+    : !user
+    ? 'Login to Create'
+    : isCreating
+    ? 'Creating...'
+    : 'Create Wallet'}
+</button>
+
 
               {walletAddress && (
                 <span className="ml-4 font-mono text-sm text-gray-800 dark:text-gray-100">
