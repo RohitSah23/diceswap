@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo, useEffect } from "react";
 import { useCreateWallet, useLogin, usePrivy, WalletWithMetadata } from "@privy-io/react-auth";
 import { createPublicClient, http, formatEther } from "viem";
 import { monadTestnet } from "viem/chains";
-import { QRCodeSVG } from "qrcode.react";
+// import { QRCodeSVG } from "qrcode.react";
 
 const publicClient = createPublicClient({
   chain: monadTestnet,
@@ -73,16 +73,16 @@ export default function UseLoginPrivy() {
     }
   }, [walletAddress, fetchBalance]);
 
-  const handleCreateWallet = useCallback(async () => {
-    setIsCreating(true);
-    try {
-      await createEthereumWallet();
-    } catch (error) {
-      console.error("Error creating wallet:", error);
-    } finally {
-      setIsCreating(false);
-    }
-  }, [createEthereumWallet]);
+  // const handleCreateWallet = useCallback(async () => {
+  //   setIsCreating(true);
+  //   try {
+  //     await createEthereumWallet();
+  //   } catch (error) {
+  //     console.error("Error creating wallet:", error);
+  //   } finally {
+  //     setIsCreating(false);
+  //   }
+  // }, [createEthereumWallet]);
 
   const { login } = useLogin();
 
@@ -124,7 +124,7 @@ export default function UseLoginPrivy() {
             >
               {!user ? "Logged Out" : "Logout"}
             </button>
-            <button 
+            {/* <button 
               onClick={handleCreateWallet} 
               disabled={!user || isCreating || hasEthereumWallet}
               className={`font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md ${
@@ -138,7 +138,7 @@ export default function UseLoginPrivy() {
               }`}
             >
               {hasEthereumWallet ? "✓ Wallet Exists" : !user ? "Login to Create Wallet" : isCreating ? "Creating..." : "Create Wallet"}
-            </button>
+            </button> */}
           </div>
 
          

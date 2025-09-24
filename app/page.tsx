@@ -1,33 +1,47 @@
 import type { Metadata } from "next";
-
-import UseLoginPrivy from "./components/UseLoginPrivy";
 import DiceSwap from "./components/DiceSwap";
+import Image from "next/image";
+import Header from "./components/header"; // import your new header
 
 export const metadata: Metadata = {
   title: "Home",
 };
 
-// trigger deploy
-
-export default function Page() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-4">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100">
-              Dice game the changer
+    <div className="min-h-screen relative bg-slate-900">
+      {/* Background Image */}
+      <div className="fixed inset-0 -z-10">
+        <Image
+          src="/hero-bg.jpg"
+          alt="Abstract blockchain background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      {/* Header with Privy login */}
+      <Header />
+
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-6 py-32 relative z-10">
+        <div className="backdrop-blur-lg bg-white/10 dark:bg-slate-800/30 rounded-3xl shadow-2xl p-8">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
+              Dice Game: The Changer
             </h1>
+            <p className="mt-4 text-lg text-white/80">
+              Experience next-level blockchain dice gaming
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <DiceSwap />
           </div>
         </div>
-        {/* <SwapComponent /> */}
-<DiceSwap/>
-        <div className="space-y-8">
-          {/* <SendNotification /> */}
-          <UseLoginPrivy />
-        </div>
       </div>
-      {/* <InstallPWA /> */}
     </div>
   );
 }
