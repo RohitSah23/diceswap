@@ -168,20 +168,7 @@ export default function UseLoginPrivy() {
                   </div>
                   
                   {/* QR Code Section */}
-                  <div className="mt-4 flex flex-col items-center">
-                    <div className="bg-white p-4 rounded-xl shadow-md">
-                      <QRCodeSVG
-                        value={walletAddress || ""}
-                        size={200}
-                        level="H"
-                        includeMargin={true}
-                        className="w-full h-full"
-                      />
-                    </div>
-                    <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                      Scan to send funds to this wallet
-                    </p>
-                  </div>
+                 
                 </div>
                 
                 <div>
@@ -218,22 +205,7 @@ export default function UseLoginPrivy() {
             </div>
           )}
 
-          {/* User Information Section */}
-          {user && (
-            <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 border border-slate-200 dark:border-slate-700">
-              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center">
-                <span className="w-8 h-8 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mr-3">
-                  👤
-                </span>
-                User Information
-              </h3>
-              <div className="bg-slate-900 dark:bg-slate-950 rounded-lg p-4 overflow-x-auto border dark:border-slate-700">
-                <pre className="text-green-400 dark:text-green-300 text-sm font-mono whitespace-pre-wrap">
-                  {JSON.stringify(user, null, 2)}
-                </pre>
-              </div>
-            </div>
-          )}
+         
         </div>
       </div>
     </div>

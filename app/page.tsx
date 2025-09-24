@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 
-import SendNotification from "./components/SendNotification";
-import { InstallPWA } from "./components/InstallPWA";
 import UseLoginPrivy from "./components/UseLoginPrivy";
-import SwapComponent from "./components/SwapComponent";
 import DiceSwap from "./components/DiceSwap";
 
 export const metadata: Metadata = {
@@ -19,7 +16,7 @@ export default function Page() {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <h1 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-100">
-              Next.js + Privy + Serwist
+              Dice game the changer
             </h1>
           </div>
         </div>
