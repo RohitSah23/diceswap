@@ -26,14 +26,14 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto  px-6 py-32 relative z-10">
+      <div className="max-h-screen mx-auto  px-6 py-32 relative z-10">
         <div className="backdrop-blur-lg bg-white/10 dark:bg-slate-800/30 rounded-3xl shadow-2xl p-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">
-              Blind DiceSwap : Swap Like a Pro
+             BLIND BLIND BLIND
             </h1>
             <p className="mt-4 text-lg text-white/80">
-              Experience next-level blockchain dice gaming
+              A BlindDiceSwap for the genz generation 
             </p>
           </div>
 

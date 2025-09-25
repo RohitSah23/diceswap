@@ -119,7 +119,7 @@ export default function Header() {
               <button
                 onClick={handleCreateWallet}
                 disabled={!user || isCreating || hasEthereumWallet}
-                className={`px-4 py-2 rounded-2xl font-semibold shadow-lg transition backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 ${
+                className={`px-4 py-2 hidden rounded-2xl font-semibold shadow-lg transition backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 ${
                   hasEthereumWallet
                     ? 'text-green-400'
                     : !user || isCreating
@@ -135,12 +135,12 @@ export default function Header() {
                   ? 'Creating...'
                   : 'Create Wallet'}
               </button>
-
+{/* 
               {walletAddress && (
                 <span className="ml-4 font-mono text-sm text-gray-800 dark:text-gray-100">
                   {balanceLoading ? 'Loading...' : `${parseFloat(balance || '0').toFixed(4)} ETH`}
                 </span>
-              )}
+              )} */}
             </>
           )}
         </div>
