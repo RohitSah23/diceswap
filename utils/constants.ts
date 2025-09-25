@@ -71,18 +71,19 @@ export const MONAD_TESTNET_TOKENS: Token[] = [
   },
 ];
 
-export const MONAD_TESTNET_TOKENS_BY_SYMBOL: Record<string, Token> = MONAD_TESTNET_TOKENS.reduce(
-  (acc, token) => {
+export const MONAD_TESTNET_TOKENS_BY_SYMBOL: Record<string, Token> =
+  MONAD_TESTNET_TOKENS.reduce((acc, token) => {
     acc[token.symbol.toLowerCase()] = token;
     return acc;
-  },
-  {} as Record<string, Token>
-);
+  }, {} as Record<string, Token>);
 
-export const MONAD_TESTNET_TOKENS_BY_ADDRESS: Record<string, Token> = MONAD_TESTNET_TOKENS.reduce(
-  (acc, token) => {
+export const MONAD_TESTNET_TOKENS_BY_ADDRESS: Record<string, Token> =
+  MONAD_TESTNET_TOKENS.reduce((acc, token) => {
     acc[token.address.toLowerCase()] = token;
     return acc;
-  },
-  {} as Record<string, Token>
-);
+  }, {} as Record<string, Token>);
+
+// ✅ Add missing exports
+export const AFFILIATE_FEE = 5; // 50 bps = 0.5%
+export const FEE_RECIPIENT = "0xa28639d4C874D9b3f75031F7bfd20d223404c8C8"; // Replace with your address
+export const MIN_TRADE_AMOUNT = "0.0001"; // Minimum trade amount
