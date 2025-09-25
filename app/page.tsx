@@ -26,7 +26,7 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-32 relative z-10">
+      <div className="max-w-7xl mx-auto  px-6 py-32 relative z-10">
         <div className="backdrop-blur-lg bg-white/10 dark:bg-slate-800/30 rounded-3xl shadow-2xl p-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">

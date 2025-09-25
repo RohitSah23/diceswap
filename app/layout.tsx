@@ -1,17 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Press_Start_2P } from "next/font/google"; // 👈 Google font import
 import "./globals.css";
 import Providers from "./components/Providers";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// Press Start 2P font
+const pressStart2P = Press_Start_2P({
+  weight: "400", // only weight available
+  subsets: ["latin"],
+  variable: "--font-press-start",
 });
 
 const APP_NAME = "PWA App";
@@ -31,10 +27,9 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
     title: APP_DEFAULT_TITLE,
-    // startUpImage: [],
   },
   other: {
-    'mobile-web-app-capable': 'yes',
+    "mobile-web-app-capable": "yes",
   },
   formatDetection: {
     telephone: false,
@@ -61,7 +56,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "transparent" },
-    { media: "(prefers-color-scheme: dark)", color: "transparent" }
+    { media: "(prefers-color-scheme: dark)", color: "transparent" },
   ],
 };
 
@@ -72,9 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${pressStart2P.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
