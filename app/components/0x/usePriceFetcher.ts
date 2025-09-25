@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 import qs from "qs";
 import { PriceRequest, ExtendedPriceResponse, ValidationError } from "@/utils/types";
-import { DEBOUNCE_DELAY } from "@/utils/constants";
 
 interface UsePriceFetcherProps {
   enabled: boolean;
@@ -51,15 +50,10 @@ export function usePriceFetcher({ enabled, request }: UsePriceFetcherProps): Use
     }
   }, [enabled, request]);
 
-  // Debounced price fetching
+  // Fetch immediately when enabled/request changes
   useEffect(() => {
     if (!enabled) return;
-
-    const timeoutId = setTimeout(() => {
-      fetchPrice();
-    }, DEBOUNCE_DELAY);
-
-    return () => clearTimeout(timeoutId);
+    fetchPrice();
   }, [fetchPrice, enabled]);
 
   return {
@@ -68,4 +62,4 @@ export function usePriceFetcher({ enabled, request }: UsePriceFetcherProps): Use
     error,
     validationErrors,
   };
-} 
+}
