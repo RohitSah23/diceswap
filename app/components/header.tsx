@@ -1,25 +1,16 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../public/Logo.jpeg';
-import {  Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { usePrivy, useLogin, useCreateWallet, WalletWithMetadata } from '@privy-io/react-auth';
-import { createPublicClient, http, formatEther } from 'viem';
-import { monadTestnet } from 'viem/chains';
-
-const publicClient = createPublicClient({
-  chain: monadTestnet,
-  transport: http(),
-});
 
 export default function Header() {
   const [isScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
-  const [balance, setBalance] = useState<string | null>(null);
-  const [balanceLoading, setBalanceLoading] = useState(false);
 
   const { ready, user, logout } = usePrivy();
   const { login } = useLogin();
@@ -37,26 +28,6 @@ export default function Header() {
   );
 
   const hasEthereumWallet = ethereumEmbeddedWallets.length > 0;
-  const walletAddress = ethereumEmbeddedWallets[0]?.address;
-
-  const fetchBalance = useCallback(async () => {
-    if (!walletAddress) return;
-    setBalanceLoading(true);
-    try {
-      const balanceWei = await publicClient.getBalance({
-        address: walletAddress as `0x${string}`,
-      });
-      setBalance(formatEther(balanceWei));
-    } catch {
-      setBalance(null);
-    } finally {
-      setBalanceLoading(false);
-    }
-  }, [walletAddress]);
-
-  useEffect(() => {
-    if (walletAddress) fetchBalance();
-  }, [walletAddress, fetchBalance]);
 
   const handleCreateWallet = useCallback(async () => {
     setIsCreating(true);
@@ -76,10 +47,8 @@ export default function Header() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <Image src={Logo} alt="DiceSwap Logo" width={40} height={40} className='rounded-xl' />
-          <span
-            className="text-2xl text-[#6258b1] font-bold leading-tight"
-          >
+          <Image src={Logo} alt="DiceSwap Logo" width={40} height={40} className="rounded-xl" />
+          <span className="text-2xl text-[#6258b1] font-bold leading-tight">
             BlindDiceSwap
           </span>
         </Link>
@@ -135,12 +104,6 @@ export default function Header() {
                   ? 'Creating...'
                   : 'Create Wallet'}
               </button>
-{/* 
-              {walletAddress && (
-                <span className="ml-4 font-mono text-sm text-gray-800 dark:text-gray-100">
-                  {balanceLoading ? 'Loading...' : `${parseFloat(balance || '0').toFixed(4)} ETH`}
-                </span>
-              )} */}
             </>
           )}
         </div>
