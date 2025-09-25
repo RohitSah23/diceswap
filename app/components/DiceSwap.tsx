@@ -114,7 +114,7 @@ export default function DiceSwap() {
             sent = true;
             break;
           }
-        } catch (_) {}
+        } catch {}
       }
 
       if (!sent) throw new Error("No valid WMON pair available");

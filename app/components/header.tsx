@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../public/Logo.jpeg';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import {  Menu, X } from 'lucide-react';
 import { usePrivy, useLogin, useCreateWallet, WalletWithMetadata } from '@privy-io/react-auth';
 import { createPublicClient, http, formatEther } from 'viem';
 import { monadTestnet } from 'viem/chains';
@@ -15,7 +15,7 @@ const publicClient = createPublicClient({
 });
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
   const [balance, setBalance] = useState<string | null>(null);
