@@ -1,13 +1,15 @@
+// app/layout.tsx
 import type { Metadata, Viewport } from "next";
-import { Press_Start_2P } from "next/font/google"; // 👈 Google font import
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Providers from "./components/Providers";
 
-// Press Start 2P font
-const pressStart2P = Press_Start_2P({
-  weight: "400", // only weight available
+// Bricolage Grotesque font
+const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-press-start",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-bricolage",
 });
 
 const APP_NAME = "PWA App";
@@ -67,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pressStart2P.variable} antialiased`}>
+      <body className={`${bricolageGrotesque.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

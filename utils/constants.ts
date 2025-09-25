@@ -1,5 +1,10 @@
 import { Token } from "./types";
 
+// Maximum uint256 value for ERC-20 allowances
+export const MAX_ALLOWANCE = BigInt(
+  "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+);
+
 export const MONAD_TESTNET_TOKENS: Token[] = [
   {
     chainId: 10143,

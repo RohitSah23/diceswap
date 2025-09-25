@@ -3,5 +3,13 @@
 @tailwind utilities;
 
 html,body {
-  font-family: var(--font-press-start), cursive;
+  font-family: var(--font-bricolage), sans-serif;
+}
+
+body {
+  font-family: var(--font-bricolage), sans-serif;
+}
+
+h1, h2, h3, p, span {
+  font-family: var(--font-bricolage), sans-serif;
 }
