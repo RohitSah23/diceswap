@@ -33,7 +33,7 @@ export default function Home() {
              BLIND BLIND BLIND
             </h1>
             <p className="mt-4 text-lg text-white/80">
-              A BlindDiceSwap for the genz generation 
+              a swapper for the genz generation 
             </p>
           </div>
 
