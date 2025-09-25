@@ -12,10 +12,10 @@ const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage",
 });
 
-const APP_NAME = "PWA App";
-const APP_DEFAULT_TITLE = "My Awesome PWA App";
-const APP_TITLE_TEMPLATE = "%s - PWA App";
-const APP_DESCRIPTION = "Best PWA app in the world!";
+const APP_NAME = "Blind Dice Swap";
+const APP_DEFAULT_TITLE = "Blind Dice Swap";
+const APP_TITLE_TEMPLATE = "Blind Dice Swap";
+const APP_DESCRIPTION = "Blind Dice Swap - Swap Like a Pro";
 
 export const metadata: Metadata = {
   applicationName: APP_NAME,
